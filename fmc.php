@@ -1,5 +1,6 @@
 <?php
  class fnc{
+
     var $fname;
     public $username;
     protected $email_address;
@@ -20,5 +21,8 @@ public function user_age($fname, $yob){
 
 $Obj = new fnc();
 print $Obj->user_age("Alex", 2004);
+
+
+
 
 ?>

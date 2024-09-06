@@ -1,4 +1,64 @@
-<!DOCTYPE html>
+<?php
+require_once "load.php";
+$ObjLayout->heading();
+
+
+
+$ObjMenu->main_menu();
+
+$ObjLayout->footer();
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,8 +81,9 @@
             </ul>
         </nav>
         
+        
     <?php
-        require_once "load.php";
+       // require_once "load.php";?    <!---->
     ?>
     </div>
    
