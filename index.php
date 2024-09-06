@@ -1,91 +1,26 @@
-<?php
-require_once "load.php";
-$ObjLayout->heading();
-
-
-
-$ObjMenu->main_menu();
-
-$ObjLayout->footer();
-?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Internet Application Programming</title>
 </head>
 <body>
-    <div class="container">
-        <h1>This is my first page</h1>
-        <h1>This is my first page</h1>
-        <h1>This is my first page</h1>
-        <nav>
-            <ul>
-                <li><a href="">This is my first page</a></li>
-                <li><a href="">This is my first page</a></li>
-                <li><a href="">This is my first page</a></li>
-                <li><a href="">This is my first page</a></li>
-                <li><a href="">This is my first page</a></li>
-            </ul>
-        </nav>
-        
-        
+    <h1>This is my first page</h1>
+
+    
+    <!-- php 
+    require_once "load.php";
+    print $obj-> user_age("Alex", 2004); 
+     -->
+
     <?php
-       // require_once "load.php";?    <!---->
+        require "load.php";
+        $ObjLayouts->__heading();
+        $ObjMenus->main_menu(); 
+        $ObjHeadings->main_banner();
+        $ObjLayouts->__footer()
     ?>
-    </div>
-   
+
 </body>
-</html>
+</html
