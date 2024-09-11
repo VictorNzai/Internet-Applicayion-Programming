@@ -1,23 +1,20 @@
 body{
     margin: 0;
 }
-
 *{
     box-sizing: border-box;
 }
-
 .topnav{
-    background-color: gray;
+    background-color: black;
     overflow: hidden;
 }
-
 .topnav a{
-color: azure;
-float: left;
-display: block;
-text-decoration: none;
-text-align: left;
-padding: 14px 16px;
+    color: azure;
+    float: left;
+    display: block;
+    text-decoration: none;
+    text-align: left;
+    padding: 14px 16px;
 }
 
 .topnav a:hover{
@@ -29,6 +26,7 @@ padding: 14px 16px;
 .topnav-right{
     float: right;
 }
+
 
 .footer{
     background-color: black;
