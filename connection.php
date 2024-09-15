@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "rehanais2cool";
-$database = "iap-project";
+$database = "api_d";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);
