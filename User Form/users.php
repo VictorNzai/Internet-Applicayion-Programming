@@ -23,6 +23,7 @@ $users = $user->getUsers();  // Fetch all users
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Role</th>
         </tr>
         </thead>
         <tbody>
@@ -31,6 +32,7 @@ $users = $user->getUsers();  // Fetch all users
                 <td><?php echo $user['user_id']; ?></td>
                 <td><?php echo $user['name']; ?></td>
                 <td><?php echo $user['email']; ?></td>
+                <td><?php echo $user['role']; ?></td>
             </tr>
         <?php } ?>
         </tbody>
