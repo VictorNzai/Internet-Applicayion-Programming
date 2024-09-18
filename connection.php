@@ -1,17 +1,15 @@
-
-
 <?php
 $servername = "localhost";
 $username = "root";
 $password = "rehanais2cool";
-$database = "api_d";
+$database = "usermanagement";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
+$mysqli = new mysqli($servername, $username, $password, $database);
 
 // Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
+if ($mysqli->connect_error) {
+  die("Connection failed: " . $mysqli->connect_error);
 }
 echo "Connected successfully";
 ?>
