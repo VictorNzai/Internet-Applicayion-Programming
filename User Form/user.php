@@ -4,12 +4,13 @@ class User {
     public $name;
     public $email;
     public $password;
+    public $role;
 
     public function __construct($db) {
         $this->db = $db;
     }
 
-    public function register($name, $email, $password) {
+    public function register($name, $email, $password, $role) {
         $this->name = $name;
         $this->email = $email;
         $this->password = password_hash($password, PASSWORD_BCRYPT);
