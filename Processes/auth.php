@@ -1,47 +1,13 @@
-<!-- 
-// class auth{
-//     public function signup($conn){
-//         if(isset($_POST["signup"])){
-//             $fullname = $_POST["fullname"];
-//             $email_address = $_POST["email_address"];
-//             $username = $_POST["username"];
-
-// Implement input validation and error handling
-// =============================================
-// Sanitize all inputs
-// verify that the fullname has only letters, space, dash, quotation
-// verify that the email has got the correct format
-// verify that the email domain is authorized (@strathmore.edu, @gmail.com, @yahoo.com, @mada.co.ke) and not (@yanky.net)
-// verify if the email alredy exists in the database
-// verify if the username alredy exists in the database
-
-// Implement 2FA (email => PHP-Mailer)
-// ===================================
-// Send email verification with an OTP (OTC)
-// Verify that the password is identical to the repeat passsword
-// verify that the password length is between 4 and 8 characters
-
-
-
-    //         $cols = ['fullname', 'email', 'username'];
-    //         $vals = [$fullname, $email_address, $username];
-
-    //         $data = array_combine($cols, $vals);
-
-    //         $insert = $conn->insert('users', $data);
-
-    //         if($insert === TRUE){
-    //             header('Location: signup.php');
-    //             exit();
-    //         }else{
-    //             die($insert);
-    //         }
-    //     }
-    // }
-} -->
 <?php
 class auth{
-    public function signup($conn, $ObjGlob){
+
+    public function bind_to_template($replacements, $template) {
+        return preg_replace_callback('/{{(.+?)}}/', function($matches) use ($replacements) {
+            return $replacements[$matches[1]];
+        }, $template);
+    }
+
+    public function signup($conn, $ObjGlob, $ObjSendMail, $lang, $conf){
         if(isset($_POST["signup"])){
 
             $errors = array();
@@ -93,17 +59,31 @@ if (!ctype_alpha($username)) {
     $ObjGlob->setMsg('errors', $errors, 'invalid');
 }
 
-// Implement 2FA (email => PHP-Mailer)
-// ===================================
-// Send email verification with an OTP (OTC)
 // Verify that the password is identical to the repeat passsword
 // verify that the password length is between 4 and 8 characters
 if(!count($errors)){
+
+// Implement 2FA (email => PHP-Mailer)
+// ===================================
+// Send email verification with an OTP (OTC)
+
+
             $cols = ['fullname', 'email', 'username'];
             $vals = [$fullname, $email_address, $username];
             $data = array_combine($cols, $vals);
             $insert = $conn->insert('users', $data);
             if($insert === TRUE){
+
+                $replacements = array('fullname' => $fullname, 'email_address' =>
+                $email_address, 'verification_code' => $conf['verification_code'], 'site_full_name' => strtoupper($conf['site_initials']));
+        
+                $ObjSendMail->SendMail([
+                    'to_name' => $fullname,
+                    'to_email' => $email_address,
+                    'subject' => $this->bind_to_template($replacements, $lang["AccountVerification"]),
+                    'message' => $this->bind_to_template($replacements, $lang["AccRegVer_template"])
+                ]);
+                
                 header('Location: signup.php');
                 unset($_SESSION["fullname"], $_SESSION["email_address"], $_SESSION["username"]);
                 exit();
