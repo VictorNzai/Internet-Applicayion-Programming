@@ -1,13 +1,13 @@
 <?php
-
+session_start();
 require "includes/constants.php";
 require "includes/dbConnection.php";
+require "lang/en.php";
 
-// Class Auto Load 
-
+// Class Auto Load
 function classAutoLoad($classname){
 
-    $directories = ["contents", "layouts", "menus", "forms", "processes"];
+    $directories = ["contents", "layouts", "menus", "forms", "processes", "global"];
 
     foreach($directories AS $dir){
         $filename = dirname(__FILE__) . DIRECTORY_SEPARATOR . $dir . DIRECTORY_SEPARATOR . $classname . ".php";
@@ -17,7 +17,10 @@ function classAutoLoad($classname){
     }
 }
 
-spl_autoload_register('classAutoLoad');
+    spl_autoload_register('classAutoLoad');
+
+    $ObjGlob = new fncs();
+    $ObjSendMail = new SendMail();
 
 // Create instances of all classes
     $ObjLayouts = new layouts();
@@ -27,11 +30,9 @@ spl_autoload_register('classAutoLoad');
     $ObjForm = new user_forms();
     $conn = new dbConnection(DBTYPE, HOSTNAME, DBPORT, HOSTUSER, HOSTPASS, DBNAME);
 
-
 // Create process instances
 
     $ObjAuth = new auth();
-     $ObjAuth->signup($conn);
-//     $auth = new auth();
-// $auth->signup($conn);
-$auth->signup($dbConnection, $username, $email, $password, $role);
+    $ObjAuth->signup($conn, $ObjGlob, $ObjSendMail, $lang, $conf);
+    $ObjAuth->verify_code($conn, $ObjGlob, $ObjSendMail, $lang, $conf);
+

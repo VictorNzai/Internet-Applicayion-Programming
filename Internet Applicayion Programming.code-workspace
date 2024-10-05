@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../IAP/api_d/plugins"
+		}
+	],
+	"settings": {}
+}

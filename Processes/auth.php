@@ -7,7 +7,7 @@ class auth{
         }, $template);
     }
 
-    public function signup($dbconnection, $ObjGlob, $ObjSendMail, $lang, $conf){
+    public function signup($conn, $ObjGlob, $ObjSendMail, $lang, $conf){
         if(isset($_POST["signup"])){
 
             $errors = array();
