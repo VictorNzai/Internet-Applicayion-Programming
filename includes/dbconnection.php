@@ -21,9 +21,9 @@
         public function connection($db_type, $db_host, $db_port, $db_user, $db_pass, $db_name){
             switch($db_type){
                 case 'PDO' :
-                    if($db_port<>Null){
-                        $db_host .= ":" . $db_port;
-                    }
+                    // if($db_port<>Null){
+                    //     $db_host .= ":" . $db_port;
+                    
                     try {
                         // Create the connection
                         $this->connection = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);

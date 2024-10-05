@@ -27,8 +27,8 @@ class contents{
         ?>
         <div class="col-md-3">
           <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-            <h2>Add borders</h2>
-            <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
+            <h2>Side Bars</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente molestiae itaque fugit ipsa distinctio soluta modi, aliquid dicta sit voluptatibus fuga omnis neque minima laudantium quibusdam unde eaque. Nostrum, blanditiis.</p>
             <button class="btn btn-outline-secondary" type="button">Example button</button>
           </div>
         </div>

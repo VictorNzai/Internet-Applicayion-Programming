@@ -1,7 +1,10 @@
 <?php
+
 class user_forms{
     public function sign_up_form($ObjGlob){
 ?>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
       <div class="row align-items-md-stretch">
         <div class="col-md-9">
           <div class="h-100 p-5 text-bg-dark rounded-3">
