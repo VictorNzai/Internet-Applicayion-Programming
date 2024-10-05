@@ -31,4 +31,7 @@ spl_autoload_register('classAutoLoad');
 // Create process instances
 
     $ObjAuth = new auth();
-    $ObjAuth->signup($conn);
+     $ObjAuth->signup($conn);
+//     $auth = new auth();
+// $auth->signup($conn);
+$auth->signup($dbConnection, $username, $email, $password, $role);
