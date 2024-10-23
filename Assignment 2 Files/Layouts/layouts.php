@@ -25,7 +25,7 @@ class layouts
     {
         ?>
             <div class="container-fluid text-bg-dark text-warning text-center mt-auto p-2">
-                <p>Jason Anyango Copyright &copy; <?php echo date('Y') ?></p>
+                <p>Copyright &copy; <?php echo date('Y') ?></p>
             </div>
 
             <!-- Bootstrap JS -->
