@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write('54+30');
+    </script>
+
+    <br>
+    <a href="#" onclick="document.write(254+132)">Click HEre</a>
+    <br>
+    <p id="ics"></p>
+
+    <script>
+        document.getElementById('ics').innerHTML = "This is my first JS";
+        document.getElementById('ics').innerHTML = "18px";
+        document.getElementById('ics').innerHTML = "block";
+        
+    </script>
+
+    <button onclick="document.getElementById('MyImg').src='../Images/bulboff.jpeg'"> Turn On</button>
+
+    <button onclick="document.getElementById('MyImg').src='../Images/bulbon.jpeg'"> Turn Off</button>
+
+    <img id="MyImg" src="../Images/bulbon.jpeg" alt="" width="150px">
+
+
+
+<!-- Posibility 3 -->
+    <!-- <script>
+         window.alert('Connection Failed'); --
+    </script> -->
+
+
+
+    <!-- Possibility 4 -->
+
+    <a href="#" onclick="return confirm('Áre you Sure?')">Delete</a>
+
+
+    <!-- Posibility 5 -->
+     <script>
+        console.log(45/15);
+     </script>
+
+     <script>
+        var age=24;
+        let lastname= 'Okama';
+        const db_name = 'ics_d';
+
+        document.write('I am' + age + 'My name is ' + lastname)
+
+        if (age >18){
+            document.write('I am an Adult');
+
+        }
+
+        else{
+            document.write('I am Not an adult');
+        }
+     </script>
+     <br>
+     <a href="" onclick="window.print();">Print</a>
+
+<br>
+<script>
+    let username =prompt('Please enter your name');
+    const message="Hello"+ username + "\Your Username" 
+    + username + "has been logged in successfully! / Regards";
+    const new_message='Hello ${username} + Your Username ${username} + has been logged in successfully!  Regards';
+
+    document.write(message);
+</script>
+
+<span id="ics_0" onclick="MyScript();"> Next</span>
+
+</body>
+<script src="../JS\script.js"></script>
+</html>

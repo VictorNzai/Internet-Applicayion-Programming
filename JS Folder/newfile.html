@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="load" onclick="sendAjax()">Click here</button>
+    <p id="ajx"></p>
+    <script>
+            var xhr=new XMLhttpRequest();
+            xhr.open('GET','ajax.php',true);
+            xhr.onreadystatechange= function(){
+                if(xhr.readyState==4 ){
+                   document.getElementById('ajx').innerHTML=xhr.responseText;
+                }
+            };
+            function sendAjax(){
+                xhr.send();
+                document.getElementById('load').style.display="none";
+            }
+    </script>
+</body>
+</html>
