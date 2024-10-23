@@ -11,8 +11,7 @@ class SendMail{
 public function SendMail($mailMsg){
 
     //Load Composer's autoloader
-    require('plugins\vendor\autoload.php');
-
+    require 'plugins/PHPMailer/vendor/autoload.php';
     
     //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
